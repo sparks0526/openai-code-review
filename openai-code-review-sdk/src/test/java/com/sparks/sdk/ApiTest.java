@@ -88,7 +88,7 @@ public class ApiTest {
         System.out.println("accessToken:" + accessToken);
         Message message = new Message();
         message.put("project", "big-market");
-        message.put("review", "feat: 新加功能");
+        message.put("review", "feat: 新加功能-----");
 
         String url = String.format("https://api.weixin.qq.com/cgi-bin/message/template/send?access_token=" + accessToken);
         sendPostRequest(url, JSON.toJSONString(message));
