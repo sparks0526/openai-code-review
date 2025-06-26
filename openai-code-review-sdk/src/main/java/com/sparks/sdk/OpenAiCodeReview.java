@@ -134,7 +134,7 @@ public class OpenAiCodeReview {
 
         System.out.println("Changes have been pushed to the repository.");
 
-        return "https://github.com/sparks0526/openai-code-review-log/master" + dateFolderName + "/" + fileName;
+        return "https://github.com/sparks0526/openai-code-review-log/master/" + dateFolderName + "/" + fileName;
 
 
     }
