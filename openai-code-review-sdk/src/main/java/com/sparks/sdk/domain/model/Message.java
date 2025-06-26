@@ -5,9 +5,12 @@ import java.util.Map;
 
 public class Message {
 
-    private String touser = "or0Ab6ivwmypESVp_bYuk92T6SvU";
-    private String template_id = "GLlAM-Q4jdgsktdNd35hnEbHVam2mwsW2YWuxDhpQkU";
-    private String url = "https://weixin.qq.com";
+    private String touser = "ovGou6uFlamUKpyDlfQVW-QpjmI0";
+
+    private String template_id = "XJqDQLarurvYHNA_lcMMrf4j0Ify07BgvrAwhZ1xpy8";
+
+    private String url = "https://github.com/sparks0526/openai-code-review-log/blob/main/2025-06-26/Bk7xt6q2cml6.md";
+
     private Map<String, Map<String, String>> data = new HashMap<>();
 
     public void put(String key, String value) {
