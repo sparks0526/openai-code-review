@@ -6,16 +6,25 @@ import com.sparks.sdk.domain.model.ChatCompletionRequest;
 import com.sparks.sdk.domain.model.ChatCompletionSyncResponse;
 import com.sparks.sdk.domain.model.Model;
 import com.sparks.sdk.types.utils.BearerTokenUtils;
+import org.eclipse.jgit.api.Git;
+import org.eclipse.jgit.transport.UsernamePasswordCredentialsProvider;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Random;
 
 public class OpenAiCodeReview {
     public static void main(String[] args) throws Exception {
-        System.out.println("测试执行");
+        System.out.println("openai代码评审，测试执行");
+        String token = System.getenv("GITHUB_TOKEN");
+        if(null == token || "".equals(token)){
+            throw new Exception("GITHUB_TOKEN<UNK>");
+        }
 
         // 1. 代码检出
 
@@ -43,6 +52,10 @@ public class OpenAiCodeReview {
         // 2.代码评审
         String log = codeReview(diffCode.toString());
         System.out.println("评审的日志内容为" + log);
+
+        // 3.写入日志文件
+        String logUrl = writeLog(token, log);
+        System.out.println("write log url:" + logUrl);
     }
 
     private static String codeReview(String diffCode) throws Exception {
@@ -92,5 +105,47 @@ public class OpenAiCodeReview {
 
         ChatCompletionSyncResponse response = JSON.parseObject(content.toString(), ChatCompletionSyncResponse.class);
         return response.getChoices().get(0).getMessage().getContent();
+    }
+
+    private static String writeLog(String token, String log) throws Exception {
+        Git git = Git.cloneRepository()
+                .setURI("https://github.com/sparks0526/openai-code-review-log")
+                .setDirectory(new File("repo"))
+                .setCredentialsProvider(new UsernamePasswordCredentialsProvider(token, ""))
+                .call();
+        // 评审log文件放置在以日期命名的文件夹
+        String dateFolderName = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        File dateFolder = new File("repo/" + dateFolderName);
+        if (!dateFolder.exists()) {
+            // 如果文件夹不存在，就新建文件夹
+            dateFolder.mkdir();
+        }
+
+        // 创建log文件的文件名
+        String fileName = generateRandomString(12) + ".md";
+        File newFile = new File(dateFolder, fileName);
+        // 向log文件中写入评审结果
+        try (FileWriter writer = new FileWriter(newFile)) {
+            writer.write(log);
+        }
+        git.add().addFilepattern(dateFolderName + "/" + fileName).call();
+        git.commit().setMessage("Add new file via GitHub Actions").call();
+        git.push().setCredentialsProvider(new UsernamePasswordCredentialsProvider(token, "")).call();
+
+        System.out.println("Changes have been pushed to the repository.");
+
+        return "https://github.com/sparks0526/openai-code-review-log/master" + dateFolderName + "/" + fileName;
+
+
+    }
+
+    private static String generateRandomString(int length){
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < length; i++) {
+            sb.append(characters.charAt(random.nextInt(characters.length())));
+        }
+        return sb.toString();
     }
 }
