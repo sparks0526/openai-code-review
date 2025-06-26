@@ -13,7 +13,7 @@ public class ApiTest {
 
     @Test
     public void test() {
-        System.out.println(Integer.parseInt("abc"));
+        System.out.println("消息模板通知功能实现");
 
     }
 }
