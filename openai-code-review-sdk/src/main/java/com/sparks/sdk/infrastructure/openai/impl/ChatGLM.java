@@ -18,7 +18,7 @@ public class ChatGLM implements IOpenAI {
     private final String apiKeySecret;
     private final String apiHost;
 
-    public ChatGLM(String apiKeySecret, String apiHost) {
+    public ChatGLM(String apiHost, String apiKeySecret) {
         this.apiKeySecret = apiKeySecret;
         this.apiHost = apiHost;
     }

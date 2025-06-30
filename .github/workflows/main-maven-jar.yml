@@ -53,23 +53,23 @@ jobs:
           echo "Commit author is ${{ env.COMMIT_AUTHOR }}"
           echo "Commit message is ${{ env.COMMIT_MESSAGE }}"    
 
-      - name: Print all environment variables
-        run: |
-          echo "===== 所有环境变量列表 ====="
-          env | sort
-          echo "========================="
-          
-          # 单独打印关键环境变量（更清晰的格式）
-          echo "Repository name: ${{ env.REPO_NAME }}"
-          echo "Branch name: ${{ env.BRANCH_NAME }}"
-          echo "Commit author: ${{ env.COMMIT_AUTHOR }}"
-          echo "Commit message: ${{ env.COMMIT_MESSAGE }}"
-          echo "GITHUB_REVIEW_LOG_URI: ${{ secrets.CODE_REVIEW_LOG_URI }}"
-          echo "COMMIT_PROJECT: ${{ env.REPO_NAME }}"
-          echo "COMMIT_BRANCH: ${{ env.BRANCH_NAME }}"
-          echo "CHATGLM_APIHOST: ${{ secrets.CHATGLM_APIHOST }}"
-          echo "CHATGLM_APIKEYSECRET: ${{ secrets.CHATGLM_APIKEYSECRET }}"
-          echo "WEIXIN_APPID: ${{ secrets.WEIXIN_APPID }}"
+#      - name: Print all environment variables
+#        run: |
+#          echo "===== 所有环境变量列表 ====="
+#          env | sort
+#          echo "========================="
+#
+#          # 单独打印关键环境变量（更清晰的格式）
+#          echo "Repository name: ${{ env.REPO_NAME }}"
+#          echo "Branch name: ${{ env.BRANCH_NAME }}"
+#          echo "Commit author: ${{ env.COMMIT_AUTHOR }}"
+#          echo "Commit message: ${{ env.COMMIT_MESSAGE }}"
+#          echo "GITHUB_REVIEW_LOG_URI: ${{ secrets.CODE_REVIEW_LOG_URI }}"
+#          echo "COMMIT_PROJECT: ${{ env.REPO_NAME }}"
+#          echo "COMMIT_BRANCH: ${{ env.BRANCH_NAME }}"
+#          echo "CHATGLM_APIHOST: ${{ secrets.CHATGLM_APIHOST }}"
+#          echo "CHATGLM_APIKEYSECRET: ${{ secrets.CHATGLM_APIKEYSECRET }}"
+#          echo "WEIXIN_APPID: ${{ secrets.WEIXIN_APPID }}"
 
 
 
