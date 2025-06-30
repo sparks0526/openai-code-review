@@ -13,7 +13,7 @@ public class ApiTest {
 
     @Test
     public void test() {
-        System.out.println("项目重构，增强可维护性");
+        System.out.println("项目重构，增强可维护性V7.9");
 
     }
 }
