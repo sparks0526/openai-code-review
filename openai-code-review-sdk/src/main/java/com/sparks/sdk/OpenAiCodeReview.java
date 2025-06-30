@@ -12,24 +12,24 @@ public class OpenAiCodeReview {
 
     private static final Logger logger = LoggerFactory.getLogger(OpenAiCodeReview.class);
 
-    // 微信配置
-    private String weixin_appid = "wx4359922ace687f92";
-    private String weixin_secret = "f59d9cfce7502417ba8519e023c39804";
-    private String weixin_touser = "ovGou6uFlamUKpyDlfQVW-QpjmI0";
-    private String weixin_template_id = "mFQgwDBTTgRLSWORhXp5qBct05gFtcNI0gamlNDWL5s";
-
-    // ChatGLM 配置
-    private String chatglm_apiHost = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
-    private String chatglm_apiKeySecret = "";
-
-    // Github 配置
-    private String github_review_log_uri;
-    private String github_token;
-
-    // 工程配置 - 自动获取
-    private String github_project;
-    private String github_branch;
-    private String github_author;
+//    // 微信配置
+//    private String weixin_appid = "wx4359922ace687f92";
+//    private String weixin_secret = "f59d9cfce7502417ba8519e023c39804";
+//    private String weixin_touser = "ovGou6uFlamUKpyDlfQVW-QpjmI0";
+//    private String weixin_template_id = "mFQgwDBTTgRLSWORhXp5qBct05gFtcNI0gamlNDWL5s";
+//
+//    // ChatGLM 配置
+//    private String chatglm_apiHost = "https://open.bigmodel.cn/api/paas/v4/chat/completions";
+//    private String chatglm_apiKeySecret = "";
+//
+//    // Github 配置
+//    private String github_review_log_url;
+//    private String github_token;
+//
+//    // 工程配置 - 自动获取
+//    private String github_project;
+//    private String github_branch;
+//    private String github_author;
 
     public static void main(String[] args) throws Exception {
         GitCommand gitCommand = new GitCommand(
