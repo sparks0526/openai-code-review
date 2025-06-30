@@ -2,7 +2,7 @@ package com.sparks.sdk;
 
 
 import com.alibaba.fastjson2.JSON;
-import com.sparks.sdk.domain.model.ChatCompletionSyncResponse;
+import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionSyncResponseDTO;
 import com.sparks.sdk.types.utils.BearerTokenUtils;
 import com.sparks.sdk.types.utils.WXAccessTokenUtils;
 import org.junit.Test;
@@ -75,7 +75,7 @@ public class ApiTest {
         connection.disconnect();
 
 //        System.out.println(content);
-        ChatCompletionSyncResponse response = JSON.parseObject(content.toString(), ChatCompletionSyncResponse.class);
+        ChatCompletionSyncResponseDTO response = JSON.parseObject(content.toString(), ChatCompletionSyncResponseDTO.class);
         System.out.println(response.getChoices().get(0).getMessage().getContent());
 
     }
