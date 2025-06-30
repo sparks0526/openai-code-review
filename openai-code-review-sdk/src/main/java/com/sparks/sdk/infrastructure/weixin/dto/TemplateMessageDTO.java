@@ -5,18 +5,16 @@ import java.util.Map;
 
 public class TemplateMessageDTO {
 
-    private String touser = "ovGou6uFlamUKpyDlfQVW-QpjmI0";
-
-    private String template_id = "XJqDQLarurvYHNA_lcMMrf4j0Ify07BgvrAwhZ1xpy8";
-
-    private String url = "https://github.com/sparks0526/openai-code-review-log/blob/main/2025-06-26/Bk7xt6q2cml6.md";
-
+    private String touser = "or0Ab6ivwmypESVp_bYuk92T6SvU";
+    private String template_id = "GLlAM-Q4jdgsktdNd35hnEbHVam2mwsW2YWuxDhpQkU";
+    private String url = "https://weixin.qq.com";
     private Map<String, Map<String, String>> data = new HashMap<>();
 
     public TemplateMessageDTO(String touser, String template_id) {
         this.touser = touser;
         this.template_id = template_id;
     }
+
     public void put(String key, String value) {
         data.put(key, new HashMap<String, String>() {
             private static final long serialVersionUID = 7092338402387318563L;
@@ -26,6 +24,7 @@ public class TemplateMessageDTO {
             }
         });
     }
+
     public static void put(Map<String, Map<String, String>> data, TemplateKey key, String value){
         data.put(key.getCode(), new HashMap<String, String>() {
             private static final long serialVersionUID = 7092338402387318563L;
@@ -35,6 +34,7 @@ public class TemplateMessageDTO {
             }
         });
     }
+
     public enum TemplateKey {
         REPO_NAME("repo_name","项目名称"),
         BRANCH_NAME("branch_name","分支名称"),
@@ -45,9 +45,9 @@ public class TemplateMessageDTO {
         private String code;
         private String desc;
 
-        TemplateKey(String desc, String code) {
-            this.desc = desc;
+        TemplateKey(String code, String desc) {
             this.code = code;
+            this.desc = desc;
         }
 
         public String getCode() {
@@ -92,3 +92,4 @@ public class TemplateMessageDTO {
     }
 
 }
+
