@@ -15,11 +15,15 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Weixin {
+
     private final Logger logger = LoggerFactory.getLogger(Weixin.class);
 
     private final String appid;
+
     private final String secret;
+
     private final String touser;
+
     private final String template_id;
 
     public Weixin(String appid, String secret, String touser, String template_id) {
@@ -53,4 +57,5 @@ public class Weixin {
             logger.info("openai-code-review weixin template message! {}", response);
         }
     }
+
 }
