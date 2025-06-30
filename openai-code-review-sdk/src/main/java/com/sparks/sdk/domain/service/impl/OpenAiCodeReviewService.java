@@ -7,7 +7,7 @@ import com.sparks.sdk.infrastructure.git.GitCommand;
 import com.sparks.sdk.infrastructure.openai.IOpenAI;
 import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionRequestDTO;
 import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionSyncResponseDTO;
-import com.sparks.sdk.infrastructure.weixin.Weixin;
+import com.sparks.sdk.infrastructure.weixin.WeiXin;
 import com.sparks.sdk.infrastructure.weixin.dto.TemplateMessageDTO;
 
 import java.io.IOException;
@@ -17,7 +17,7 @@ import java.util.Map;
 
 public class OpenAiCodeReviewService extends AbstractIOpenAiCodeReviewService {
 
-    public OpenAiCodeReviewService(GitCommand gitCommand, IOpenAI openAI, Weixin weixin) {
+    public OpenAiCodeReviewService(GitCommand gitCommand, IOpenAI openAI, WeiXin weixin) {
         super(gitCommand, openAI, weixin);
     }
 

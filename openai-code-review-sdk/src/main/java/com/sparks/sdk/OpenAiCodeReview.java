@@ -6,7 +6,7 @@ import com.sparks.sdk.domain.service.impl.OpenAiCodeReviewService;
 import com.sparks.sdk.infrastructure.git.GitCommand;
 import com.sparks.sdk.infrastructure.openai.IOpenAI;
 import com.sparks.sdk.infrastructure.openai.impl.ChatGLM;
-import com.sparks.sdk.infrastructure.weixin.Weixin;
+import com.sparks.sdk.infrastructure.weixin.WeiXin;
 
 public class OpenAiCodeReview {
 
@@ -44,7 +44,7 @@ public class OpenAiCodeReview {
         /**
          * 项目：{{repo_name.DATA}} 分支：{{branch_name.DATA}} 作者：{{commit_author.DATA}} 说明：{{commit_message.DATA}}
          */
-        Weixin weiXin = new Weixin(
+        WeiXin weiXin = new WeiXin(
                 getEnv("WEIXIN_APPID"),
                 getEnv("WEIXIN_SECRET"),
                 getEnv("WEIXIN_TOUSER"),

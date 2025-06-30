@@ -14,9 +14,9 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Scanner;
 
-public class Weixin {
+public class WeiXin {
 
-    private final Logger logger = LoggerFactory.getLogger(Weixin.class);
+    private final Logger logger = LoggerFactory.getLogger(WeiXin.class);
 
     private final String appid;
 
@@ -26,7 +26,7 @@ public class Weixin {
 
     private final String template_id;
 
-    public Weixin(String appid, String secret, String touser, String template_id) {
+    public WeiXin(String appid, String secret, String touser, String template_id) {
         this.appid = appid;
         this.secret = secret;
         this.touser = touser;

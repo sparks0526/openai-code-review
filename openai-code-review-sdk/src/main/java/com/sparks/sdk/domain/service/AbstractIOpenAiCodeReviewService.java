@@ -3,7 +3,7 @@ package com.sparks.sdk.domain.service;
 
 import com.sparks.sdk.infrastructure.git.GitCommand;
 import com.sparks.sdk.infrastructure.openai.IOpenAI;
-import com.sparks.sdk.infrastructure.weixin.Weixin;
+import com.sparks.sdk.infrastructure.weixin.WeiXin;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +16,9 @@ public abstract class AbstractIOpenAiCodeReviewService implements IOpenAiCodeRev
 
     protected final GitCommand gitCommand;
     protected final IOpenAI openAI;
-    protected final Weixin weixin;
+    protected final WeiXin weixin;
 
-    public AbstractIOpenAiCodeReviewService(GitCommand gitCommand, IOpenAI openAI, Weixin weixin) {
+    public AbstractIOpenAiCodeReviewService(GitCommand gitCommand, IOpenAI openAI, WeiXin weixin) {
         this.gitCommand = gitCommand;
         this.openAI = openAI;
         this.weixin = weixin;
