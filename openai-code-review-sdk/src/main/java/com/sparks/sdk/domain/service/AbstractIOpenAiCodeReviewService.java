@@ -2,7 +2,6 @@ package com.sparks.sdk.domain.service;
 
 
 import com.sparks.sdk.infrastructure.git.GitCommand;
-import com.sparks.sdk.infrastructure.openai.IOpenAI;
 import com.sparks.sdk.infrastructure.weixin.WeiXin;
 
 import org.slf4j.Logger;

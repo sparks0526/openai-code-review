@@ -2,6 +2,7 @@ package com.sparks.sdk.infrastructure.weixin;
 
 
 import com.alibaba.fastjson2.JSON;
+import com.sparks.sdk.infrastructure.port.IPort;
 import com.sparks.sdk.infrastructure.weixin.dto.TemplateMessageDTO;
 import com.sparks.sdk.types.utils.WXAccessTokenUtils;
 import org.slf4j.Logger;
@@ -14,7 +15,8 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import java.util.Scanner;
 
-public class WeiXin {
+
+public class WeiXin{
 
     private final Logger logger = LoggerFactory.getLogger(WeiXin.class);
 
@@ -32,6 +34,7 @@ public class WeiXin {
         this.touser = touser;
         this.template_id = template_id;
     }
+
 
     public void sendTemplateMessage(String logUrl, Map<String, Map<String, String>> data) throws Exception {
         String accessToken = WXAccessTokenUtils.getAccessToken(appid, secret);

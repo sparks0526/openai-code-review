@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.sparks.sdk.domain.service.impl.OpenAiCodeReviewService;
 import com.sparks.sdk.infrastructure.git.GitCommand;
-import com.sparks.sdk.infrastructure.openai.IOpenAI;
 import com.sparks.sdk.infrastructure.openai.impl.ChatGLM;
 import com.sparks.sdk.infrastructure.weixin.WeiXin;
 

@@ -4,7 +4,6 @@ package com.sparks.sdk.infrastructure.openai.impl;
 import com.alibaba.fastjson2.JSON;
 import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionRequestDTO;
 import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionSyncResponseDTO;
-import com.sparks.sdk.infrastructure.openai.IOpenAI;
 import com.sparks.sdk.types.utils.BearerTokenUtils;
 
 import java.io.BufferedReader;

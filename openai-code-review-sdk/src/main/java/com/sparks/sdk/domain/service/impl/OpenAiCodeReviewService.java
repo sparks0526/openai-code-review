@@ -4,7 +4,6 @@ package com.sparks.sdk.domain.service.impl;
 import com.sparks.sdk.domain.model.Model;
 import com.sparks.sdk.domain.service.AbstractIOpenAiCodeReviewService;
 import com.sparks.sdk.infrastructure.git.GitCommand;
-import com.sparks.sdk.infrastructure.openai.IOpenAI;
 import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionRequestDTO;
 import com.sparks.sdk.infrastructure.openai.dto.ChatCompletionSyncResponseDTO;
 import com.sparks.sdk.infrastructure.weixin.WeiXin;
